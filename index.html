@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> <!-- AOS Animations -->
+</head>
+<body>
+  <div id="background-animation"></div> <!-- Background animation container -->
+  <header id="home">
+    <div class="header-container">
+      <h1>
+        <span class="typing"></span>
+      </h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="skills" data-aos="fade-up">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill">Python</div>
+      <div class="skill">Java</div>
+      <div class="skill">C++</div>
+      <div class="skill">TensorFlow</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">Scikit-learn</div>
+      <div class="skill">SQL</div>
+      <div class="skill">NumPy</div>
+    </div>
+  </section>
+
+  <section id="experience" data-aos="fade-up">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-line"></div> <!-- Timeline line -->
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>Software Engineering Intern</h3>
+          <div class="company-time">
+            <span>MOOG Space and Defense</span> | <span>May 2024 – Present</span>
+          </div>
+          <ul>
+            <li>Implemented unit testing in C achieving 100% code coverage.</li>
+            <li>Developed a C# application for efficient aviation data transfer.</li>
+            <li>Built optimized SQL Server databases integrated with Python UI.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>Machine Learning Engineering Intern</h3>
+          <div class="company-time">
+            <span>Solisa AI</span> | <span>May 2024 – July 2024</span>
+          </div>
+          <ul>
+            <li>Developed a TensorFlow neural network with an AUC of 75%.</li>
+            <li>Employed advanced feature engineering and hyperparameter tuning.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>Machine Learning Engineer (Capstone)</h3>
+          <div class="company-time">
+            <span>Astro Seed</span> | <span>Aug 2023 – May 2024</span>
+          </div>
+          <ul>
+            <li>Secured 97.67% accuracy using ResNet50 for plant diagnostics.</li>
+            <li>Led a team of five to develop AI-based health diagnostics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"></div>
+        <div class="timeline-content">
+          <h3>Software Engineering Intern</h3>
+          <div class="company-time">
+            <span>Nike</span> | <span>Jun 2022 – Aug 2022</span>
+          </div>
+          <ul>
+            <li>Designed Python algorithms for sentiment analysis.</li>
+            <li>Built Splunk dashboards for real-time monitoring and audits.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up">
+    <h2>Contact</h2>
+    <form action="#" method="POST">
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <textarea placeholder="Your Message"></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/satvik-panchal/" target="_blank">
+        <img src="In-Blue-34@2x.png" alt="LinkedIn">
+      </a>
+      <a href="mailto:panchalsatvik@gmail.com" target="_blank">Email Me</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Satvik Panchal</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init(); // Initialize AOS animations
+
+    // Typing animation
+    const typingElement = document.querySelector(".typing");
+    const text = "Hello! I'm Satvik Panchal, a CS Student & Aspiring AI Researcher.";
+    let index = 0;
+
+    function type() {
+      if (index < text.length) {
+        typingElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(type, 100);
+      }
+    }
+    type();
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', event => {
+        event.preventDefault();
+        const targetId = event.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        window.scrollTo({
+          top: targetElement.offsetTop - 50,
+          behavior: 'smooth',
+        });
+      });
+    });
+  </script>
+</body>
+</html>
