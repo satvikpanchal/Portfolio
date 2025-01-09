@@ -64,12 +64,12 @@ $(document).ready(function () {
   });
 
   // Form Submission
-  $('#contactForm').on('submit', function (e) { // Updated selector
-    e.preventDefault(); // Prevent default form submission
+  $('#contactForm').on('submit', function (e) {
+    e.preventDefault();
     console.log('Form submission prevented.');
 
     const formData = $(this).serialize(); // Serialize form data
-    console.log('Form Data:', formData); // Debugging log
+    console.log('Form Data:', formData);
 
     // AJAX POST request
     $.ajax({
@@ -77,7 +77,7 @@ $(document).ready(function () {
       url: '/send_message',
       data: formData,
       success: function (response) {
-        console.log('Server Response:', response); // Debugging log
+        console.log('Server Response:', response);
         if (response.status === 'success') {
           showPrompt(response.message, 'success');
           $('#contactForm')[0].reset(); // Clear the form
@@ -86,7 +86,7 @@ $(document).ready(function () {
         }
       },
       error: function (xhr, status, error) {
-        console.error('AJAX Error:', status, error); // Debugging log
+        console.error('AJAX Error:', status, error);
         showPrompt('Failed to send the message. Please try again later.', 'error');
       },
     });
