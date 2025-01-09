@@ -9,8 +9,8 @@ particlesJS.load('particles-js', 'js/particle.json', function () {
 // Two-line typing effect
 document.addEventListener('DOMContentLoaded', function () {
   const tagline =
-    "Hello, I am Satvik Panchal!\n" +
-    "I'm blending ML and Software Engineering for real-world impact!";
+  "Hello, I am Satvik Panchal!\n" +
+  "I'm blending AI/ML and SWE for real-world impact!";
   const typingSpan = document.querySelector('.typing');
   let i = 0;
 
